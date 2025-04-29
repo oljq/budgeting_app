@@ -1,0 +1,20 @@
+[
+    {
+        "mesto": "derma viva",
+        "iznos": 7500.0,
+        "kategorija": "Kozmetika",
+        "nacin": "Kartica"
+    },
+    {
+        "mesto": "hleb",
+        "iznos": 70.0,
+        "kategorija": "Namirnice",
+        "nacin": "Kes"
+    },
+    {
+        "mesto": "bla bla bla",
+        "iznos": 300.0,
+        "kategorija": "Namirnice",
+        "nacin": "Kartica"
+    }
+]
