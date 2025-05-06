@@ -49,7 +49,7 @@ class Home_scr(Screen):
         money_layout = BoxLayout(orientation='horizontal', spacing=20, size_hint=(1, 0.06), pos_hint={'center_x': 0.5, 'y': 0.75})
         cash = ResponsiveLabel(
             size_factor=0.3,  
-            text=f"Cash: {cash}RSD" ,
+            text=f"Cash: {cash}EUR" ,
             halign="center", valign="middle"
         )
         cash.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))
@@ -58,7 +58,7 @@ class Home_scr(Screen):
 
         card = ResponsiveLabel( 
             size_factor=0.3, 
-            text=f"Card: {card} RSD", 
+            text=f"Card: {card} EUR", 
             halign="center", valign="middle"
         )
         card.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))

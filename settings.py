@@ -2,7 +2,6 @@
 # Initial cash, card
 # Spent cash, card
 # Delete all receipts
-#fix Spent cash
 
 from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
@@ -26,7 +25,7 @@ class Settings(Screen):
 
         layout = FloatLayout()
 
-        background = Image(source="static/bg123.jpg", size_hint=(1, 1.1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+        background = Image(source="static/bg.jpg", size_hint=(1, 1.1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
         layout.add_widget(background)
 
         layout.add_widget(Line(height=2, size_hint=(1, None)))
@@ -85,6 +84,9 @@ class Settings(Screen):
         layout.add_widget(spent_layout)
 
         layout.add_widget(Line(height=2, size_hint=(1, None)))
+
+
+        print(f"Initial cash: {f.start_cash}, Initial card: {f.start_card}")
 
         home_scr_layout=BoxLayout(orientation='horizontal', spacing=20, size_hint=(1, 0.06), pos_hint={'center_x': 0.5, 'y': 0.4})
         home_scr_cash=ResponsiveLabel(

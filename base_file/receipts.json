@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "location": "maxi",
+        "amount": 6.6,
+        "category": "Cosmetics",
+        "payment_method": "Cash"
+    }
+]

@@ -9,8 +9,8 @@ import os
 
 #File paths to data base
 
-file_path = "base/receipts.json"
-initial_state = "base/initial_state.json"
+file_path = "base_file/receipts.json"
+initial_state = "base_file/initial_state.json"
 
 receipts = []
 start_cash = 0.0
@@ -50,10 +50,10 @@ def load_state():
     if os.path.exists(initial_state):
         with open(initial_state, "r", encoding="utf-8") as f:
             data = json.load(f)
-            start_cash = data.get("start_cash", 0)
-            start_card = data.get("start_card", 0)
+            start_cash = data.get("start_cash", 0.0)
+            start_card = data.get("start_card", 0.0)
     else:
-        save_state(0, 0)
+        save_state(0.0, 0.0)
 
 def save_state(cash, card):
     global start_cash, start_card
@@ -69,8 +69,8 @@ def save_state(cash, card):
 
 def load_receipts():
     global receipts
-    if not os.path.exists('base'):
-        os.makedirs('base')
+    if not os.path.exists('base_file'):
+        os.makedirs('base_file')
 
     # If the file exists, load it, otherwise create a file with empty lists
     if os.path.exists(file_path):
@@ -107,7 +107,7 @@ def add_receipt(location, amount, category, payment_method):
 
 def sum_all():
     receipts = load_receipts() 
-    sum = 0
+    sum = 0.0
     for receipt in receipts:
         sum += receipt['amount']
     return sum
@@ -148,19 +148,19 @@ def display_remaining_card():
     return round(remaining, 2)
 
 def display_remaining_money():
-    sum =start_card + start_cash
-    sum_buy_payment_methodu = sum_payment_method()
-    total_payment = sum_buy_payment_methodu.get(Payment_method.Card, 0) + sum_buy_payment_methodu.get(Payment_method.Cash, 0)
+    global start_card
+    global start_cash
+    sum = float(start_cash) + float(start_card)  
+    total_payment = float(sum_all())  
     return round(sum - total_payment, 2)
-
 
 
 def delete(instance=None):
     global receipts
     receipts.clear() 
 
-    if os.path.exists('base/receipts.json'):
-        os.remove('base/receipts.json')
+    if os.path.exists('base_file/receipts.json'):
+        os.remove('base_file/receipts.json')
 
 def return_to_home_screen(instance):
     from kivy.app import App

@@ -20,7 +20,7 @@ class List(Screen):
 
         layout = FloatLayout()
 
-        background = Image(source="static/bg123.jpg", size_hint=(1, 1.1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+        background = Image(source="static/bg.jpg", size_hint=(1, 1.1), pos_hint={'center_x': 0.5, 'center_y': 0.5})
         layout.add_widget(background)
 
         layout.add_widget(Line(height=2, size_hint=(1, None)))
@@ -60,7 +60,7 @@ class List(Screen):
         for receipt in f.receipts:
             lbl = ResponsiveLabel(
                 size_factor=0.40,
-                text=f"{receipt['location']}: {receipt['amount']} RSD", 
+                text=f"{receipt['location']}: {receipt['amount']} EUR", 
                 size_hint=(1, None), 
                 height=60,
                 halign="center", valign="middle",

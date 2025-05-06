@@ -1,4 +1,4 @@
 {
-    "start_cash": "",
-    "start_card": ""
+    "start_cash": 200.0,
+    "start_card": 50.0
 }
