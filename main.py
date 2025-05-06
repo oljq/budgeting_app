@@ -1,35 +1,35 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
-import funkcije as f 
+import functions as f 
 
 from kivy.core.window import Window
-Window.size = (360, 720)
+#Window.size = (360, 720)
 
 class MyApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.title = "sili"
+        self.title = "Budgeting"
         self.icon = "static/4.jpg"
 
-        self.racuni = f.racuni
-        f.ucitaj_racune()
-        f.ucitaj_stanje()
+        self.receipts = f.receipts
+        f.load_receipts()
+        f.load_state()
 
     def build(self):
-        from podesavanja import Podesavanja
-        from pocetni_ekran import PocetniEkran
-        from istorija import Istorija
-        from dodaj import Dodaj
-        from listing import Listing
+        from settings import Settings
+        from home_scr import Home_scr
+        from history import History
+        from add import Add
+        from list import List
 
         sm = ScreenManager()  
 
-        sm.add_widget(PocetniEkran(name='pocetni'))
-        sm.add_widget(Dodaj(name='dodaj'))
-        sm.add_widget(Listing(name='listing'))
-        sm.add_widget(Istorija(name='kategorija'))
-        sm.add_widget(Podesavanja(name='podesavanja'))
+        sm.add_widget(Home_scr(name='home_scr'))
+        sm.add_widget(Add(name='add'))
+        sm.add_widget(List(name='list'))
+        sm.add_widget(History(name='category'))
+        sm.add_widget(Settings(name='settings'))
   
 
         return sm

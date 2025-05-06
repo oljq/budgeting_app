@@ -2,12 +2,11 @@ from kivy.uix.button import Button
 from kivy.uix.image import Image
 from kivy.graphics import Rectangle
 
-class DugmeNazad(Button):
-    def __init__(self, slika_path, **kwargs):
+class Button_back(Button):
+    def __init__(self, picture_path, **kwargs):
         super().__init__(**kwargs)
         
-        self.image = Image(source=slika_path, allow_stretch=True, keep_ratio=True)
-        
+        self.image = Image(source=picture_path, allow_stretch=True, keep_ratio=True)
         self.background_normal = ''  
         self.background_down = '' 
         self.background_color = (0, 0, 0, 0)  
