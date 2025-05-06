@@ -41,6 +41,8 @@ class Add(Screen):
         self.amount_input = TextInput(hint_text="Enter amount", size_hint=(0.8, None), height=50, pos_hint={'center_x': 0.5, 'y': 0.6})
         layout.add_widget(self.amount_input)
 
+#Dropdown meny
+
         category_dropdown = DropDown()
         for k in Category:
             btn = Button(text=str(k.name), size_hint_y=None, height=44)

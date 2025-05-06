@@ -2,6 +2,7 @@
 # Initial cash, card
 # Spent cash, card
 # Delete all receipts
+#fix Spent cash
 
 from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout

@@ -7,6 +7,8 @@ from kivy.graphics import Color, Rectangle
 import json
 import os
 
+#File paths to data base
+
 file_path = "base/receipts.json"
 initial_state = "base/initial_state.json"
 

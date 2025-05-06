@@ -1,5 +1,6 @@
 #2 pagee
-#display all bills with place and amount
+#display all bills with place and amount 
+#scrollview
 
 from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout

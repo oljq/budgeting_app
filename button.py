@@ -2,6 +2,8 @@ from kivy.uix.button import Button
 from kivy.uix.image import Image
 from kivy.graphics import Rectangle
 
+#Button back is picture 
+
 class Button_back(Button):
     def __init__(self, picture_path, **kwargs):
         super().__init__(**kwargs)

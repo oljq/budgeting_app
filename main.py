@@ -3,7 +3,7 @@ from kivy.uix.screenmanager import ScreenManager
 import functions as f 
 
 from kivy.core.window import Window
-#Window.size = (360, 720)
+#Window.size = (360, 720) best if looking on pc
 
 class MyApp(App):
     def __init__(self, **kwargs):

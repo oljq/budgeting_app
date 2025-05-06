@@ -1,5 +1,5 @@
 #3 page
-#display category and amount
+# display category and amount
 
 
 from kivy.uix.screenmanager import Screen

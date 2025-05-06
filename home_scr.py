@@ -1,4 +1,5 @@
 #0. page
+#4 battons for navigating to new windows
 
 from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
