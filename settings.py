@@ -62,27 +62,25 @@ class Settings(Screen):
 
         spent_layout = BoxLayout(orientation='horizontal', spacing=20, size_hint=(1, 0.06), pos_hint={'center_x': 0.5, 'y': 0.5})
         sume = f.sum_payment_method()
-        spent_cash = round(sume.get(Payment_method.Cash, 0), 2)
-        spent_card = round(sume.get(Payment_method.Card, 0), 2)
 
-        spent_cash_label=ResponsiveLabel(            
+        spent_cash=ResponsiveLabel(            
             size_factor=0.3, 
-            text=f"Spent cash: {spent_cash}",
+            text=f"Spent cash: {sume[Payment_method.Cash]}",
             halign="center", valign="middle",
             color=(0, 0, 0, 1)
         )
-        spent_cash_label.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))
+        spent_cash.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))
 
-        spent_card_label=ResponsiveLabel(            
+        spent_card=ResponsiveLabel(            
             size_factor=0.3, 
-            text=f"Spent cash: {spent_cash}",
+            text=f"Spent card:  {sume[Payment_method.Card]}",
             halign="center", valign="middle",
             color=(0, 0, 0, 1)
         )
-        spent_card_label.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))
+        spent_card.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))
 
-        spent_layout.add_widget(spent_cash_label)
-        spent_layout.add_widget(spent_card_label)
+        spent_layout.add_widget(spent_cash)
+        spent_layout.add_widget(spent_card)
         layout.add_widget(spent_layout)
 
         layout.add_widget(Line(height=2, size_hint=(1, None)))
@@ -164,11 +162,9 @@ class Settings(Screen):
 
 
     def display_message(self, tekst):
-        # Ako postoji prethodna message, ukloni je
         if self.current_message:
             self.remove_widget(self.current_message)
 
-        # Prikazi novu poruku
         message = ResponsiveLabel(
             size_factor=0.25,
             text=tekst,
@@ -180,7 +176,8 @@ class Settings(Screen):
         message.bind(size=lambda inst, val: setattr(inst, 'text_size', inst.size))
         self.add_widget(message)
 
-        # Čuvaj referencu na trenutnu poruku
+
+        # Keep a reference to the current message
         self.current_message = message
 
         
