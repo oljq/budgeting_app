@@ -8,3 +8,13 @@ Features
 • View all recorded expenses
 • See available balance
 
+Instalation
+*only available for Android*
+• Download .apk fail from apk folder
+• Transfer file to your phone
+• Open the fileand follow prompt to install
+
+Future Improvements
+• Better date handling
+• Improved UI for smaller screens
+
