@@ -12,7 +12,7 @@ Instalation
 *only available for Android*
 • Download .apk fail from apk folder
 • Transfer file to your phone
-• Open the fileand follow prompt to install
+• Open the file and follow prompt to install
 
 Future Improvements
 • Better date handling
